@@ -1,0 +1,15 @@
+<div class="panel">
+  <h3>Detalle</h3>
+
+  <ng-container *ngIf="seleccionado; else sinSeleccion">
+    <p class="titulo">{{ seleccionado.titulo }}</p>
+    <p><strong>Autor:</strong> {{ seleccionado.autor }}</p>
+    <p><strong>Año:</strong> {{ seleccionado.anio }}</p>
+    <p><strong>Género:</strong> {{ seleccionado.genero }}</p>
+    <button (click)="limpiar()">Limpiar</button>
+  </ng-container>
+
+  <ng-template #sinSeleccion>
+    <p class="vacio">No hay ningún elemento seleccionado</p>
+  </ng-template>
+</div>
