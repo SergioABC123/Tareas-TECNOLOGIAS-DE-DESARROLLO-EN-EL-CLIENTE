@@ -1,0 +1,11 @@
+<div class="contenedor">
+  <app-panel-izquierdo
+    [seleccionado]="seleccionActual"
+    (elementoSeleccionado)="onElementoSeleccionado($event)">
+  </app-panel-izquierdo>
+
+  <app-panel-derecho
+    [seleccionado]="seleccionActual"
+    (limpiarSeleccion)="onLimpiarSeleccion()">
+  </app-panel-derecho>
+</div>
