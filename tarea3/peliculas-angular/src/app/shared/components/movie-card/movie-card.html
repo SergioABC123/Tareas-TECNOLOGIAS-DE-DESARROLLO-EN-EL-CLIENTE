@@ -1,0 +1,30 @@
+<article class="movie-card">
+  <img
+    [src]="movie.poster"
+    [alt]="'Póster de ' + movie.title"
+    loading="lazy"
+  />
+
+  <div class="card-content">
+    <h2>{{ movie.title }}</h2>
+
+    <p class="metadata">{{ movie.year }} · {{ movie.genre }}</p>
+    <p><strong>Director:</strong> {{ movie.director }}</p>
+    <p><strong>Productor:</strong> {{ movie.producer }}</p>
+
+    <div class="card-actions">
+      <a [routerLink]="['/movies', movie.id]">
+        Ver detalle
+      </a>
+
+      <button
+        type="button"
+        [ngClass]="{ 'is-favorite': isFavorite }"
+        [attr.aria-pressed]="isFavorite"
+        (click)="changeFavorite()"
+      >
+        {{ isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos' }}
+      </button>
+    </div>
+  </div>
+</article>

@@ -1,1 +1,1 @@
-# Tareas-TECNOLOGIAS-DE-DESARROLLO-EN-EL-CLIENTE
+Para los estilos me apoyé completamente de la IA profe, no soy tan bueno con los estilos. Si tiene tema con eso lo empiezo a hacer por mi mismo, pero le soy sincero. Los estilos no me llama la atención y la ia los hace bonitos
