@@ -1,0 +1,25 @@
+<section>
+  <h1>Mis películas favoritas</h1>
+
+  <p role="status">
+    Películas guardadas: {{ favoritesService.favorites().length }}
+  </p>
+
+  @if (favoritesService.favorites().length > 0) {
+    <div class="movie-grid">
+      @for (movie of favoritesService.favorites(); track movie.id) {
+        <app-movie-card
+          [movie]="movie"
+          [isFavorite]="true"
+          (favoriteChange)="favoritesService.removeFavorite($event.id)"
+        />
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <h2>Todavía no tienes favoritos</h2>
+      <p>Explora el catálogo y agrega las películas que más te gusten.</p>
+      <a class="action-button" routerLink="/">Explorar películas</a>
+    </div>
+  }
+</section>

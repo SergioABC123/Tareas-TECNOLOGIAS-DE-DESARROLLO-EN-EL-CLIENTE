@@ -1,0 +1,51 @@
+<a class="back-link" routerLink="/">← Volver al catálogo</a>
+
+@if (movie(); as selectedMovie) {
+  <article class="detail">
+    <img
+      [src]="selectedMovie.poster"
+      [alt]="'Póster de ' + selectedMovie.title"
+    />
+
+    <div>
+      <h1>{{ selectedMovie.title }}</h1>
+
+      <dl>
+        <dt>Director</dt>
+        <dd>{{ selectedMovie.director }}</dd>
+
+        <dt>Productor</dt>
+        <dd>{{ selectedMovie.producer }}</dd>
+
+        <dt>Género</dt>
+        <dd>{{ selectedMovie.genre }}</dd>
+
+        <dt>Año</dt>
+        <dd>{{ selectedMovie.year }}</dd>
+      </dl>
+
+      <h2>Descripción</h2>
+      <p class="description">{{ selectedMovie.description }}</p>
+
+      <button
+        type="button"
+        class="action-button"
+        [class.danger]="favoritesService.isFavorite(selectedMovie.id)"
+        [attr.aria-pressed]="favoritesService.isFavorite(selectedMovie.id)"
+        (click)="favoritesService.toggleFavorite(selectedMovie)"
+      >
+        {{
+          favoritesService.isFavorite(selectedMovie.id)
+            ? 'Quitar de favoritos'
+            : 'Agregar a favoritos'
+        }}
+      </button>
+    </div>
+  </article>
+} @else {
+  <section class="empty-state">
+    <h1>Película no encontrada</h1>
+    <p>No existe una película con ese identificador.</p>
+    <a class="action-button" routerLink="/">Explorar películas</a>
+  </section>
+}

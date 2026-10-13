@@ -1,0 +1,45 @@
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #1d4ed8;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  gap: 32px;
+  padding: 24px;
+  background: white;
+  border-radius: 14px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+dt {
+  margin-top: 16px;
+  color: #475569;
+  font-weight: bold;
+}
+
+dd {
+  margin: 4px 0 0;
+}
+
+.description {
+  line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+  .detail {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    max-width: 320px;
+    margin: auto;
+  }
+}

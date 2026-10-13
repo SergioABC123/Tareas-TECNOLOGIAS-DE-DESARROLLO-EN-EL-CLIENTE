@@ -1,0 +1,28 @@
+<header class="site-header">
+  <nav aria-label="Navegación principal">
+    <a class="brand" routerLink="/">CineFavoritos</a>
+
+    <div class="nav-links">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >
+        Películas
+      </a>
+
+      <a
+        routerLink="/favorites"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+      >
+        Favoritos ({{ favoritesService.favorites().length }})
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <router-outlet />
+</main>
